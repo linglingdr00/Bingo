@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".view.MainActivity">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.linglingdr00.bingo.viewmodel.MainViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@color/blue"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bingo_game"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="30dp"
+            android:textSize="32sp"/>
+
+        <GridLayout
+            android:id="@+id/grid_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:columnCount="3"
+            android:rowCount="3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/button_1"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="5dp"
+                android:background="@color/white"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:onClick="changeButtonColor"
+                android:text="@{viewModel.numberList[0]}"
+                tools:text="1" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/button_2"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="5dp"
+                android:background="@color/white"
+                android:textSize="24sp"
+                android:textColor="@color/black"
+                android:onClick="changeButtonColor"
+                android:text="@{viewModel.numberList[1]}"
+                tools:text="2" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/button_3"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="5dp"
+                android:background="@color/white"
+                android:textSize="24sp"
+                android:textColor="@color/black"
+                android:onClick="changeButtonColor"
+                android:text="@{viewModel.numberList[2]}"
+                tools:text="3" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/button_4"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="5dp"
+                android:background="@color/white"
+                android:textSize="24sp"
+                android:textColor="@color/black"
+                android:onClick="changeButtonColor"
+                android:text="@{viewModel.numberList[3]}"
+                tools:text="4" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/button_5"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="5dp"
+                android:background="@color/white"
+                android:textSize="24sp"
+                android:textColor="@color/black"
+                android:onClick="changeButtonColor"
+                android:text="@{viewModel.numberList[4]}"
+                tools:text="5" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/button_6"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="5dp"
+                android:background="@color/white"
+                android:textSize="24sp"
+                android:textColor="@color/black"
+                android:onClick="changeButtonColor"
+                android:text="@{viewModel.numberList[5]}"
+                tools:text="6" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/button_7"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="5dp"
+                android:background="@color/white"
+                android:textSize="24sp"
+                android:textColor="@color/black"
+                android:onClick="changeButtonColor"
+                android:text="@{viewModel.numberList[6]}"
+                tools:text="7" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/button_8"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="5dp"
+                android:background="@color/white"
+                android:textSize="24sp"
+                android:textColor="@color/black"
+                android:onClick="changeButtonColor"
+                android:text="@{viewModel.numberList[7]}"
+                tools:text="8" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/button_9"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="5dp"
+                android:background="@color/white"
+                android:textSize="24sp"
+                android:textColor="@color/black"
+                android:onClick="changeButtonColor"
+                android:text="@{viewModel.numberList[8]}"
+                tools:text="9" />
+
+        </GridLayout>
+
+        <TextView
+            android:id="@+id/bingo_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bingo"
+            android:visibility="gone"
+            android:background="@color/yellow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:textColor="@color/red"
+            android:padding="10dp"
+            android:textSize="48sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_restart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/restart"
+            android:textSize="18sp"
+            android:padding="10dp"
+            android:visibility="gone"
+            android:background="@color/black"
+            android:textColor="@color/white"
+            android:onClick="restartGame"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_margin="30dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
