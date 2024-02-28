@@ -42,6 +42,8 @@ class MainActivity : AppCompatActivity() {
 
         // 設定 layout 的 view model 為 mainViewModel
         binding.viewModel = mainViewModel
+        // 設定 lifecycle owner
+        binding.lifecycleOwner = this
 
         // 開始遊戲
         mainViewModel.startGame()
